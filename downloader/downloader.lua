@@ -1,7 +1,7 @@
 local tArgs = {...}
 local failedLoads = 0
 
-local repUrl = "https://github.com/Keigun-Spark/CC-Survival-Scripts-Clone/tree/main/"
+local repUrl = "https://raw.githubusercontent.com/Keigun-Spark/CC-Survival-Scripts-Clone/main/"
 
 local library = {
 	"init.lua",
