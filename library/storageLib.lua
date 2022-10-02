@@ -30,10 +30,10 @@ function storage.avoidChest()
 end
 
 function storage.invCheck()
-	if library.data.loadData("/.save", "/chest")[1] == true then
-		library.storage.emptyInv()
-	elseif library.data.loadData("/.save", "/chest")[1] == false then
-		library.storage.waitforemptyInv()
+	if data.loadData("/.save", "/chest")[1] == true then
+		storage.emptyInv()
+	elseif data.loadData("/.save", "/chest")[1] == false then
+		storage.waitforemptyInv()
 	end
 end
 
