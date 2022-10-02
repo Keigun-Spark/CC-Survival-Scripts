@@ -29,6 +29,14 @@ function storage.avoidChest()
 	end
 end
 
+function storage.invCheck()
+	if library.data.loadData("/.save", "/chest")[1] == true then
+		library.storage.emptyInv()
+	elseif library.data.loadData("/.save", "/chest")[1] == false then
+		library.storage.waitforemptyInv()
+	end
+end
+
 function storage.emptyInv()
 	local start = data.loadData("/.save", "/start_pos")
 	if turtle.getItemCount(15) > 0 then
