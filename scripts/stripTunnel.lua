@@ -7,7 +7,7 @@ function mineSquence(Shaft_Amount, Shaft_Width, Shaft_Distance)
 			library.move.forward()
 			library.dig.checkForOre()
 			library.tools.dig("up")
-			ilibrary.storage.invCheck()
+			library.storage.invCheck()
 		end
 		library.move.turnLeft()
 		for j=1, Shaft_Width do
