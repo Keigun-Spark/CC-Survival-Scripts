@@ -122,7 +122,10 @@ local oreList = {
 	"bewitchment:silver_ore",
 	"bewitchment:salt_ore",
 	"biomesoplenty:gem_ore",
-	"tconstruct:ore"
+	"tconstruct:ore",
+	"magicalcrops:essenceore",
+	"magicalcrops:essenceoreend",
+	"magicalcrops:essenceorenether"
 }
 
 local junkList = {
