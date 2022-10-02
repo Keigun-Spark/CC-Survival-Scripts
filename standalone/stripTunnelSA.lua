@@ -544,7 +544,7 @@ end
 function lib.stackPop()
 	local func = inverter[stack[#stack]]
 	table.remove(stack)
-	return func()
+	return
 end
 
 function lib.checkOreTable(tbl)
