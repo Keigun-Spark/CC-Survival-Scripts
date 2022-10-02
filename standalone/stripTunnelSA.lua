@@ -517,10 +517,10 @@ function lib.avoidChest()
 end
 
 function lib.invCheck()
-	if library.data.loadData("/.save", "/chest")[1] == true then
-		library.storage.emptyInv()
-	elseif library.data.loadData("/.save", "/chest")[1] == false then
-		library.storage.waitforemptyInv()
+	if lib.loadData("/.save", "/chest")[1] == true then
+		lib.emptyInv()
+	elseif lib.loadData("/.save", "/chest")[1] == false then
+		lib.waitforemptyInv()
 	end
 end
 
