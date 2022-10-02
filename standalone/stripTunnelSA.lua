@@ -671,28 +671,36 @@ function mineSquence(Shaft_Amount, Shaft_Width, Shaft_Distance)
 			lib.forward()
 			lib.checkForOre()
 			lib.dig("up")
+			invCheck()
 		end
 		lib.turnLeft()
 		for j=1, Shaft_Width do
 			lib.forward()
 			lib.checkForOre()
 			lib.dig("up")
+			invCheck()
 		end
+		invCheck()
 		lib.turnAround()
 		lib.forward(Shaft_Width)
 		for j=1, Shaft_Width do
 			lib.forward()
 			lib.checkForOre()
 			lib.dig("up")
+			invCheck()
 		end
 		lib.turnAround()
 		lib.forward(Shaft_Width)
 		lib.turnRight()
-		if lib.loadData("/.save", "/chest")[1] == true then
-			lib.emptyInv()
-		elseif lib.loadData("/.save", "/chest")[1] == false then
-			lib.waitforemptyInv()
-		end
+		invCheck()
+	end
+end
+
+function invCheck()
+	if library.data.loadData("/.save", "/chest")[1] == true then
+		library.storage.emptyInv()
+	elseif library.data.loadData("/.save", "/chest")[1] == false then
+		library.storage.waitforemptyInv()
 	end
 end
 
