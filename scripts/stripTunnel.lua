@@ -7,6 +7,11 @@ function mineSquence(Shaft_Amount, Shaft_Width, Shaft_Distance)
 			library.move.forward()
 			library.dig.checkForOre()
 			library.tools.dig("up")
+			if library.data.loadData("/.save", "/chest")[1] == true then
+				library.storage.emptyInv()
+			elseif library.data.loadData("/.save", "/chest")[1] == false then
+				library.storage.waitforemptyInv()
+			end
 		end
 		library.move.turnLeft()
 		for j=1, Shaft_Width do
