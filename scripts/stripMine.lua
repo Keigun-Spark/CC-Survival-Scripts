@@ -11,7 +11,7 @@ end
 if type(tonumber(tArgs[1])) ~= "number" then
 	term.clear()
 	term.setCursorPos(1,1)
-	error("Define mine lenght! (Example: '10') [10 blocks long]")
+	error("Define mine length! (Example: '10') [10 blocks long]")
 end
 
 local start = library.data.copyTable(library.data.coords)
