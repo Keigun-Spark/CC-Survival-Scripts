@@ -118,7 +118,7 @@ local oreList = {
 	"tconstruct:ore",
 	"magicalcrops:essenceore",
 	"magicalcrops:essenceoreend",
-	"magicalcrops:essenceorenether"
+	"magicalcrops:essenceorenether",
 }
 
 function dig.stackPop()
