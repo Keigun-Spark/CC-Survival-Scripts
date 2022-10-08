@@ -13,7 +13,7 @@ function mineSquence(width, height, depth, side)
 			end
 			for i=1, width do
 				while row >= 1 do
-					library.move.up("3")
+					library.move.up(3)
 					row = row - 3
 					library.move.turnAround()
 					for k=1, depth - 1 do
@@ -31,7 +31,7 @@ function mineSquence(width, height, depth, side)
 				library.tools.dropJunk()
 				row = height - 3
 				while row >= 1 do
-					library.move.down("3")
+					library.move.down(3)
 					row = row - 3
 					library.move.turnAround()
 					for k=1, depth - 1 do
@@ -56,7 +56,7 @@ function mineSquence(width, height, depth, side)
 			end
 			for i=1, width do
 				while row >= 1 do
-					library.move.up("2")
+					library.move.up(2)
 					row = row - 2
 					library.move.turnAround()
 					for k=1, depth - 1 do
@@ -72,7 +72,7 @@ function mineSquence(width, height, depth, side)
 				library.tools.dropJunk()
 				row = height - 2
 				while row >= 1 do
-					library.move.down("2")
+					library.move.down(2)
 					row = row - 2
 					library.move.turnAround()
 					for k=1, depth - 1 do
@@ -133,7 +133,7 @@ function mineSquence(width, height, depth, side)
 			end
 			for i=1, width do
 				while row >= 1 do
-					library.move.up("3")
+					library.move.up(3)
 					row = row - 3
 					library.move.turnAround()
 					for k=1, depth - 1 do
@@ -151,7 +151,7 @@ function mineSquence(width, height, depth, side)
 				library.tools.dropJunk()
 				row = height - 3
 				while row >= 1 do
-					library.move.down("3")
+					library.move.down(3)
 					row = row - 3
 					library.move.turnAround()
 					for k=1, depth - 1 do
@@ -176,7 +176,7 @@ function mineSquence(width, height, depth, side)
 			end
 			for i=1, width do
 				while row >= 1 do
-					library.move.up("2")
+					library.move.up(2)
 					row = row - 2
 					library.move.turnAround()
 					for k=1, depth - 1 do
@@ -192,7 +192,7 @@ function mineSquence(width, height, depth, side)
 				library.tools.dropJunk()
 				row = height - 2
 				while row >= 1 do
-					library.move.down("2")
+					library.move.down(2)
 					row = row - 2
 					library.move.turnAround()
 					for k=1, depth - 1 do
