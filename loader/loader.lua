@@ -153,6 +153,9 @@ function endstats()
 end
 
 function download(vers, uptrue)
+	if vers == "no" then
+		uptrue = vers
+	end
 	if vers == "auto" or vers == "nil" then
 		term.clear()
 		term.setCursorPos(1,1)
