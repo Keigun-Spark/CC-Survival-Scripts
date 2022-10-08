@@ -43,7 +43,7 @@ function dlscript()
 			term.setCursorPos(1,1)
 			print("Could not connect to website ", repUrl.."library/"..filename)
 			failedLoads = failedLoads + 1
-			-- os.sleep(5)
+			os.sleep(5)
 		else
 			fs.delete("library/"..filename)
 			file = fs.open("library/"..filename, "wb")
@@ -52,7 +52,7 @@ function dlscript()
 			term.clear()
 			term.setCursorPos(1,1)
 			print("Downloaded "..filename.."!")
-			-- os.sleep(0.25)
+			os.sleep(0.25)
 		end
 	end
 	for index, filename in ipairs(scripts) do
@@ -62,7 +62,7 @@ function dlscript()
 			term.setCursorPos(1,1)
 			print("Could not connect to website ", repUrl.."scripts/"..filename)
 			failedLoads = failedLoads + 1
-			-- os.sleep(5)
+			os.sleep(5)
 		else
 			fs.delete(filename)
 			file = fs.open(filename, "wb")
@@ -71,7 +71,7 @@ function dlscript()
 			term.clear()
 			term.setCursorPos(1,1)
 			print("Downloaded "..filename.."!")
-			-- os.sleep(0.25)
+			os.sleep(0.25)
 		end
 	end
 end
@@ -84,7 +84,7 @@ function dlstandalone()
 			term.setCursorPos(1,1)
 			print("Could not connect to website ", repUrl.."standalone/"..filename)
 			failedLoads = failedLoads + 1
-			-- os.sleep(5)
+			os.sleep(5)
 		else
 			fs.delete(filename)
 			file = fs.open(filename, "wb")
@@ -93,7 +93,7 @@ function dlstandalone()
 			term.clear()
 			term.setCursorPos(1,1)
 			print("Downloaded "..filename.."!")
-			-- os.sleep(0.25)
+			os.sleep(0.25)
 		end
 	end
 end
@@ -106,7 +106,7 @@ function dlloader(uptrue)
 			term.setCursorPos(1,1)
 			print("Could not connect to website ", repUrl.."loader/"..filename)
 			failedLoads = failedLoads + 1
-			-- os.sleep(5)
+			os.sleep(5)
 		else
 			if uptrue == "no" then
 				fs.delete(filename)
@@ -117,7 +117,7 @@ function dlloader(uptrue)
 				term.setCursorPos(1,1)
 				print("Downloaded new "..filename.."!")
 				print("Execute "..filename.." to update!")
-				-- os.sleep(1)
+				os.sleep(1)
 			else
 				fs.delete("startup/autoupdater.lua")
 				file = fs.open("startup/autoupdater.lua", "wb")
@@ -128,7 +128,7 @@ function dlloader(uptrue)
 				print("Downloaded "..filename.."!")
 				print("Autoupdater will update on each startup!")
 				print("New scripts will download with new autoupdater.")
-				-- os.sleep(1)
+				os.sleep(1)
 			end
 		end
 	end
@@ -140,13 +140,13 @@ function endstats()
 		term.setCursorPos(1,1)
 		print("Download finished with "..failedLoads.." failed downloads!")
 		term.setCursorPos(2,1)
-		-- os.sleep(5)
+		os.sleep(5)
 	else
 		term.clear()
 		term.setCursorPos(1,1)
 		print("Downloads finished!")
 		term.setCursorPos(2,1)
-		-- os.sleep(2)
+		os.sleep(2)
 		term.clear()
 		term.setCursorPos(1,1)
 	end
@@ -157,7 +157,7 @@ function download(vers, uptrue)
 		term.clear()
 		term.setCursorPos(1,1)
  		print("Downloading / updating scripts with autoupdate!")
-		-- os.sleep(0.5)
+		os.sleep(0.5)
 		dlscript()
 		dlloader(uptrue)
 		endstats()
@@ -165,7 +165,7 @@ function download(vers, uptrue)
 		term.clear()
 		term.setCursorPos(1,1)
  		print("Downloading / updating standalone scripts!")
-		-- os.sleep(0.5)
+		os.sleep(0.5)
 		dlstandalone()
 		dlloader()
 		endstats()
@@ -177,7 +177,7 @@ function download(vers, uptrue)
 		else
 			print("Downloading / updating normal scripts and standalone scripts with autoupdate!")
 		end
-		-- os.sleep(0.5)
+		os.sleep(0.5)
 		dlscript()
 		dlstandalone()
 		dlloader(uptrue)
