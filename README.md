@@ -1,8 +1,6 @@
 # CC-Survival-Scripts-Clone
 
-Stuff for the [CC:Tweaked](https://www.curseforge.com/minecraft/mc-mods/cc-tweaked) mod.
-
-Please see [the original](https://github.com/drums12360/CC-Survival-Scripts) repository for the newest updates!
+Stuff for the [CC:Tweaked](https://www.curseforge.com/minecraft/mc-mods/cc-tweaked) mod. Please see [the original](https://github.com/drums12360/CC-Survival-Scripts) repository!
 
 Downloader CC:T Command `wget https://raw.githubusercontent.com/Keigun-Spark/CC-Survival-Scripts-Clone/main/loader/loader.lua`
 
