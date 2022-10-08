@@ -34,8 +34,6 @@ function mineSquence(depth, start)
 				return
 			end
 		end
-		library.tools.inventorySort()
-		library.tools.dropJunk()
 	end
 end
 

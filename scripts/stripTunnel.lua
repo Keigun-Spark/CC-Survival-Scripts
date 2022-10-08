@@ -7,7 +7,6 @@ function mineSquence(Shaft_Amount, Shaft_Width, Shaft_Distance)
 			library.move.forward()
 			library.dig.checkForOre()
 			library.tools.dig("up")
-			library.tools.inventorySort()
 			library.storage.invCheck()
 		end
 		library.move.turnLeft()
@@ -15,7 +14,6 @@ function mineSquence(Shaft_Amount, Shaft_Width, Shaft_Distance)
 			library.move.forward()
 			library.dig.checkForOre()
 			library.tools.dig("up")
-			library.tools.inventorySort()
 		end
 		library.move.turnAround()
 		library.move.forward(Shaft_Width)
@@ -23,12 +21,10 @@ function mineSquence(Shaft_Amount, Shaft_Width, Shaft_Distance)
 			library.move.forward()
 			library.dig.checkForOre()
 			library.tools.dig("up")
-			library.tools.inventorySort()
 		end
 		library.move.turnAround()
 		library.move.forward(Shaft_Width)
 		library.move.turnRight()
-		library.tools.inventorySort()
 		library.storage.invCheck()
 	end
 end

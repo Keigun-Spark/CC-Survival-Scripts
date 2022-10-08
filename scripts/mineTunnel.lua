@@ -6,8 +6,6 @@ function mineSquence(amount)
 		library.move.forward()
 		library.dig.checkForOre()
 		library.tools.dig("up")
-		library.tools.inventorySort()
-		library.tools.dropJunk()
 		library.storage.invCheck()
 	end
 end

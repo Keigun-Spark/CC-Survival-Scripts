@@ -16,8 +16,8 @@ local function mineSquence(steps, direction)
 			library.move.forward()
 			library.move.down()
 		end
-		library.tool.inventorySort()
 		library.tools.dropJunk()
+		library.tool.inventorySort()
 	end
 end
 
