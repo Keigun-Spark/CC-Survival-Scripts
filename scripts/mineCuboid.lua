@@ -5,235 +5,309 @@ function mineSquence(width, height, depth, side)
 	if side == "right" then
 		if height % 3 == 0 then
 			library.move.up()
-			row = height - 3
-			for j=1, depth do
-				library.move.forward()
-				library.tools.dig("up")
-				library.tools.dig("down")
-			end
+			layer = height - 3
+			row = width - 1
+			library.move.forward()
+			library.tools.dig("up")
+			library.tools.dig("down")
 			for i=1, width do
-				while row >= 1 do
+				while layer >= 1 do
+					for j=1, depth - 1 do
+						library.move.forward()
+						library.tools.dig("up")
+						library.tools.dig("down")
+					end
 					library.move.up(3)
-					row = row - 3
+					library.tools.dig("up")
+					layer = layer - 3
 					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 						library.tools.dig("up")
 						library.tools.dig("down")
 					end
-				end
-				library.move.turnLeft()
-				library.move.forward()
-				library.tools.dig("up")
-				library.tools.dig("down")
-				library.move.turnLeft()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
-				row = height - 3
-				while row >= 1 do
-					library.move.down(3)
-					row = row - 3
-					for k=1, depth - 1 do
+					row = row - 1
+					if row > 0 then
+						library.move.turnLeft()
 						library.move.forward()
 						library.tools.dig("up")
 						library.tools.dig("down")
+						library.move.turnLeft()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
+						for k=1, depth - 1 do
+							library.move.forward()
+							library.tools.dig("up")
+							library.tools.dig("down")
+						end
+						library.move.down(3)
+						library.tools.dig("down")
+						layer = layer + 3
+						library.move.turnAround()
+						for k=1, depth - 1 do
+							library.move.forward()
+							library.tools.dig("up")
+							library.tools.dig("down")
+						end
+						row = row - 1
+					end
+					if row > 0 then
+						library.move.turnLeft()
+						library.move.forward()
+						library.tools.dig("up")
+						library.tools.dig("down")
+						library.move.turnLeft()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
 					end
 				end
-				library.move.turnRight()
-				library.move.forward()
-				library.tools.dig("up")
-				library.tools.dig("down")
-				library.move.turnRight()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
 			end
 		elseif height % 2 == 0 then
-			row = height - 2
-			for j=1, depth do
-				library.move.forward()
-				library.tools.dig("up")
-			end
+			layer = height - 2
+			row = width - 1
+			library.move.forward()
+			library.tools.dig("up")
 			for i=1, width do
-				while row >= 1 do
+				while layer >= 1 do
+					for j=1, depth - 1 do
+						library.move.forward()
+						library.tools.dig("up")
+					end
 					library.move.up(2)
-					row = row - 2
+					library.tools.dig("up")
+					layer = layer - 2
 					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 						library.tools.dig("up")
 					end
-				end
-				library.move.turnLeft()
-				library.move.forward()
-				library.tools.dig("up")
-				library.move.turnLeft()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
-				row = height - 2
-				while row >= 1 do
-					library.move.down(2)
-					row = row - 2
-					for k=1, depth - 1 do
+					row = row - 1
+					if row > 0 then
+						library.move.turnLeft()
 						library.move.forward()
+						library.tools.dig("up")
+						library.move.turnLeft()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
+						for k=1, depth - 1 do
+							library.move.forward()
+							library.tools.dig("up")
+						end
+						library.move.down(2)
 						library.tools.dig("down")
+						layer = layer + 2
+						library.move.turnAround()
+						for k=1, depth - 1 do
+							library.move.forward()
+							library.tools.dig("up")
+						end
+						row = row - 1
+					end
+					if row > 0 then
+						library.move.turnLeft()
+						library.move.forward()
+						library.tools.dig("up")
+						library.move.turnLeft()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
 					end
 				end
-				library.move.turnRight()
-				library.move.forward()
-				library.tools.dig("down")
-				library.move.turnRight()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
 			end
 		elseif height % 1 == 0 then
-			row = height - 1
-			for j=1, depth do
-				library.move.forward()
-			end
+			layer = height - 1
+			row = width - 1
+			library.move.forward()
 			for i=1, width do
-				while row >= 1 do
+				while layer >= 1 do
+					for j=1, depth - 1 do
+						library.move.forward()
+					end
 					library.move.up()
-					row = row - 1
+					layer = layer - 1
 					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 					end
-				end
-				library.move.turnLeft()
-				library.move.forward()
-				library.move.turnLeft()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
-				row = height - 1
-				while row >= 1 do
-					library.move.down()
 					row = row - 1
-					for k=1, depth - 1 do
+					if row > 0 then
+						library.move.turnLeft()
 						library.move.forward()
+						library.move.turnLeft()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
+						for k=1, depth - 1 do
+							library.move.forward()
+						end
+						library.move.down()
+						layer = layer + 1
+						library.move.turnAround()
+						for k=1, depth - 1 do
+							library.move.forward()
+						end
+						row = row - 1
+					end
+					if row > 0 then
+						library.move.turnLeft()
+						library.move.forward()
+						library.move.turnLeft()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
 					end
 				end
-				library.move.turnRight()
-				library.move.forward()
-				library.move.turnRight()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
 			end
 		end
 	elseif side == "left" then
 		if height % 3 == 0 then
 			library.move.up()
-			row = height - 3
-			for j=1, depth do
-				library.move.forward()
-				library.tools.dig("up")
-				library.tools.dig("down")
-			end
+			layer = height - 3
+			row = width - 1
+			library.move.forward()
+			library.tools.dig("up")
+			library.tools.dig("down")
 			for i=1, width do
-				while row >= 1 do
+				while layer >= 1 do
+					for j=1, depth - 1 do
+						library.move.forward()
+						library.tools.dig("up")
+						library.tools.dig("down")
+					end
 					library.move.up(3)
-					row = row - 3
+					library.tools.dig("up")
+					layer = layer - 3
 					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 						library.tools.dig("up")
 						library.tools.dig("down")
 					end
-				end
-				library.move.turnRight()
-				library.move.forward()
-				library.tools.dig("up")
-				library.tools.dig("down")
-				library.move.turnRight()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
-				row = height - 3
-				while row >= 1 do
-					library.move.down(3)
-					row = row - 3
-					for k=1, depth - 1 do
+					row = row - 1
+					if row > 0 then
+						library.move.turnRight()
 						library.move.forward()
 						library.tools.dig("up")
 						library.tools.dig("down")
+						library.move.turnRight()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
+						for k=1, depth - 1 do
+							library.move.forward()
+							library.tools.dig("up")
+							library.tools.dig("down")
+						end
+						library.move.down(3)
+						library.tools.dig("down")
+						layer = layer + 3
+						library.move.turnAround()
+						for k=1, depth - 1 do
+							library.move.forward()
+							library.tools.dig("up")
+							library.tools.dig("down")
+						end
+						row = row - 1
+					end
+					if row > 0 then
+						library.move.turnRight()
+						library.move.forward()
+						library.tools.dig("up")
+						library.tools.dig("down")
+						library.move.turnRight()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
 					end
 				end
-				library.move.turnLeft()
-				library.move.forward()
-				library.tools.dig("up")
-				library.tools.dig("down")
-				library.move.turnLeft()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
 			end
 		elseif height % 2 == 0 then
-			row = height - 2
-			for j=1, depth do
-				library.move.forward()
-				library.tools.dig("up")
-			end
+			layer = height - 2
+			row = width - 1
+			library.move.forward()
+			library.tools.dig("up")
 			for i=1, width do
-				while row >= 1 do
+				while layer >= 1 do
+					for j=1, depth - 1 do
+						library.move.forward()
+						library.tools.dig("up")
+					end
 					library.move.up(2)
-					row = row - 2
+					library.tools.dig("up")
+					layer = layer - 2
 					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 						library.tools.dig("up")
 					end
-				end
-				library.move.turnRight()
-				library.move.forward()
-				library.tools.dig("up")
-				library.move.turnRight()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
-				row = height - 2
-				while row >= 1 do
-					library.move.down(2)
-					row = row - 2
-					for k=1, depth - 1 do
+					row = row - 1
+					if row > 0 then
+						library.move.turnRight()
 						library.move.forward()
+						library.tools.dig("up")
+						library.move.turnRight()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
+						for k=1, depth - 1 do
+							library.move.forward()
+							library.tools.dig("up")
+						end
+						library.move.down(2)
 						library.tools.dig("down")
+						layer = layer + 2
+						library.move.turnAround()
+						for k=1, depth - 1 do
+							library.move.forward()
+							library.tools.dig("up")
+						end
+						row = row - 1
+					end
+					if row > 0 then
+						library.move.turnRight()
+						library.move.forward()
+						library.tools.dig("up")
+						library.move.turnRight()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
 					end
 				end
-				library.move.turnLeft()
-				library.move.forward()
-				library.tools.dig("down")
-				library.move.turnLeft()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
 			end
 		elseif height % 1 == 0 then
-			row = height - 1
-			for j=1, depth do
-				library.move.forward()
-			end
+			layer = height - 1
+			row = width - 1
+			library.move.forward()
 			for i=1, width do
-				while row >= 1 do
+				while layer >= 1 do
+					for j=1, depth - 1 do
+						library.move.forward()
+					end
 					library.move.up()
-					row = row - 1
+					layer = layer - 1
 					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 					end
-				end
-				library.move.turnRight()
-				library.move.forward()
-				library.move.turnRight()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
-				row = height - 1
-				while row >= 1 do
-					library.move.down()
 					row = row - 1
-					for k=1, depth - 1 do
+					if row > 0 then
+						library.move.turnRight()
 						library.move.forward()
+						library.move.turnRight()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
+						for k=1, depth - 1 do
+							library.move.forward()
+						end
+						library.move.down()
+						layer = layer + 1
+						library.move.turnAround()
+						for k=1, depth - 1 do
+							library.move.forward()
+						end
+						row = row - 1
+					end
+					if row > 0 then
+						library.move.turnRight()
+						library.move.forward()
+						library.move.turnRight()
+						library.tools.inventorySort()
+						library.tools.dropJunk()
 					end
 				end
-				library.move.turnLeft()
-				library.move.forward()
-				library.move.turnLeft()
-				library.tools.inventorySort()
-				library.tools.dropJunk()
 			end
 		end
 	end
