@@ -22,29 +22,28 @@ function mineSquence(width, height, depth, side)
 						library.tools.dig("down")
 					end
 				end
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.move.forward()
 				library.tools.dig("up")
 				library.tools.dig("down")
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 				row = height - 3
 				while row >= 1 do
 					library.move.down(3)
 					row = row - 3
-					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 						library.tools.dig("up")
 						library.tools.dig("down")
 					end
 				end
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.move.forward()
 				library.tools.dig("up")
 				library.tools.dig("down")
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 			end
@@ -64,26 +63,25 @@ function mineSquence(width, height, depth, side)
 						library.tools.dig("up")
 					end
 				end
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.move.forward()
 				library.tools.dig("up")
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 				row = height - 2
 				while row >= 1 do
 					library.move.down(2)
 					row = row - 2
-					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 						library.tools.dig("down")
 					end
 				end
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.move.forward()
 				library.tools.dig("down")
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 			end
@@ -101,23 +99,22 @@ function mineSquence(width, height, depth, side)
 						library.move.forward()
 					end
 				end
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.move.forward()
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 				row = height - 1
 				while row >= 1 do
 					library.move.down()
 					row = row - 1
-					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 					end
 				end
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.move.forward()
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 			end
@@ -142,29 +139,28 @@ function mineSquence(width, height, depth, side)
 						library.tools.dig("down")
 					end
 				end
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.move.forward()
 				library.tools.dig("up")
 				library.tools.dig("down")
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 				row = height - 3
 				while row >= 1 do
 					library.move.down(3)
 					row = row - 3
-					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 						library.tools.dig("up")
 						library.tools.dig("down")
 					end
 				end
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.move.forward()
 				library.tools.dig("up")
 				library.tools.dig("down")
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 			end
@@ -184,26 +180,25 @@ function mineSquence(width, height, depth, side)
 						library.tools.dig("up")
 					end
 				end
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.move.forward()
 				library.tools.dig("up")
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 				row = height - 2
 				while row >= 1 do
 					library.move.down(2)
 					row = row - 2
-					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 						library.tools.dig("down")
 					end
 				end
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.move.forward()
 				library.tools.dig("down")
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 			end
@@ -221,23 +216,22 @@ function mineSquence(width, height, depth, side)
 						library.move.forward()
 					end
 				end
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.move.forward()
-				library.move.turnLeft()
+				library.move.turnRight()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 				row = height - 1
 				while row >= 1 do
 					library.move.down()
 					row = row - 1
-					library.move.turnAround()
 					for k=1, depth - 1 do
 						library.move.forward()
 					end
 				end
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.move.forward()
-				library.move.turnRight()
+				library.move.turnLeft()
 				library.tools.inventorySort()
 				library.tools.dropJunk()
 			end
