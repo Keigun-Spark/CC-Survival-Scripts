@@ -1,6 +1,9 @@
 local tArgs = {...}
 
 function refuel(secs, repl)
+	if secs == "replace" then
+		repl = secs
+	end
 	if repl == "replace" then
 		fs.move("refuelSA.lua", "refuel.lua")
 		term.clear()
