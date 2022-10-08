@@ -33,7 +33,7 @@ end
 
 if type(tonumber(tArgs[1])) ~= "number" then
 	if tArgs[1] ~= nil then
-		if type(tostring(tArgs[1])) == "string" then
+		if type(tostring(tArgs[1])) ~= "replace" then
 			term.clear()
 			term.setCursorPos(1,1)
 			error("Value was not a number, define time in seconds!")
