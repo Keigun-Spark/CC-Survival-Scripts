@@ -6,6 +6,7 @@ local data = {
 	coords = {x = 0, y = 0,z = 0}
 }
 
+
 function data.copyTable(tbl)
 	if type(tbl) ~= "table" then
 		error("The type of 'tbl' is not a table",2)

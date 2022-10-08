@@ -34,9 +34,8 @@ function mineSquence(depth, start)
 				return
 			end
 		end
-		if turtle.getItemCount(16) >= 1 then
-			library.tools.dropJunk()
-		end
+		library.tools.inventorySort()
+		library.tools.dropJunk()
 	end
 end
 

@@ -3,6 +3,7 @@ local tools = require("library/toolsLib")
 
 local move = {}
 
+
 local fuelList = {
 	"minecraft:coal",
 	"minecraft:coal_block",

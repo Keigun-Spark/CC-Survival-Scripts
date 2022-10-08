@@ -3,6 +3,7 @@ local move = require("library/moveLib")
 
 local storage = {}
 
+
 function storage.drop(slots)
 	local inspect, datai = turtle.inspect()
 	if datai.name == "minecraft:chest" then

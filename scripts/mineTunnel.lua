@@ -6,11 +6,9 @@ function mineSquence(amount)
 		library.move.forward()
 		library.dig.checkForOre()
 		library.tools.dig("up")
-		if library.data.loadData("/.save", "/chest")[1] == true then
-			library.storage.emptyInv()
-		elseif library.data.loadData("/.save", "/chest")[1] == false then
-			library.storage.waitforemptyInv()
-		end
+		library.tools.inventorySort()
+		library.tools.dropJunk()
+		library.storage.invCheck()
 	end
 end
 

@@ -5,6 +5,8 @@ function mineSquence(amount)
 	for i=1, amount do
 		library.move.forward()
 		library.dig.checkForOre()
+		library.tools.inventorySort()
+		library.storage.invCheck()
 	end
 end
 
@@ -16,6 +18,7 @@ end
 
 local start = library.data.copyTable(library.data.coords)
 library.data.saveData("/.save", "/start_pos", start)
+library.storage.avoidChest()
 mineSquence(tonumber(tArgs[1]))
 library.move.moveTo(start.x, start.y, start.z)
 library.storage.drop(library.tools.maxSlots)

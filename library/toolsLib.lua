@@ -5,6 +5,7 @@ local tools = {
 	slot = 1,
 }
 
+
 local junkList = {
 	"minecraft:dirt",
 	"minecraft:gravel",

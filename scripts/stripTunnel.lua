@@ -7,6 +7,7 @@ function mineSquence(Shaft_Amount, Shaft_Width, Shaft_Distance)
 			library.move.forward()
 			library.dig.checkForOre()
 			library.tools.dig("up")
+			library.tools.inventorySort()
 			library.storage.invCheck()
 		end
 		library.move.turnLeft()
@@ -14,6 +15,7 @@ function mineSquence(Shaft_Amount, Shaft_Width, Shaft_Distance)
 			library.move.forward()
 			library.dig.checkForOre()
 			library.tools.dig("up")
+			library.tools.inventorySort()
 		end
 		library.move.turnAround()
 		library.move.forward(Shaft_Width)
@@ -21,15 +23,17 @@ function mineSquence(Shaft_Amount, Shaft_Width, Shaft_Distance)
 			library.move.forward()
 			library.dig.checkForOre()
 			library.tools.dig("up")
+			library.tools.inventorySort()
 		end
 		library.move.turnAround()
 		library.move.forward(Shaft_Width)
 		library.move.turnRight()
+		library.tools.inventorySort()
 		library.storage.invCheck()
 	end
 end
 
-if type(tonumber(tArgs[1])) ~= "number" and type(tonumber(tArgs[2])) ~= "number" and type(tonumber(tArgs[3])) ~= "number" then
+if type(tonumber(tArgs[1])) ~= "number" or type(tonumber(tArgs[2])) ~= "number" or type(tonumber(tArgs[3])) ~= "number" then
 	term.clear()
 	term.setCursorPos(1,1)
 	error("Define shaft amount, shaft width and shaft distance! (Example: '10 20 3') [10 deep, 20 to each side, and every 3 blocks]")

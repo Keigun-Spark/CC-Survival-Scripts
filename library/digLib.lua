@@ -4,6 +4,7 @@ local dig = {}
 
 local stack = {}
 
+
 local inverter = {
 	["forward"] = move.backward,
 	["back"] = move.forward,
