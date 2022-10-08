@@ -32,7 +32,7 @@ local scriptsSA = {
 }
 
 local loader = {
-	"downloader.lua",
+	"loader.lua",
 }
 
 function dlscript()
@@ -100,11 +100,11 @@ end
 
 function dlloader(uptrue)
 	for index, filename in ipairs(loader) do
-		local content = http.get(repUrl.."downloader/"..filename).readAll()
+		local content = http.get(repUrl.."loader/"..filename).readAll()
 		if not content then
 			term.clear()
 			term.setCursorPos(1,1)
-			print("Could not connect to website ", repUrl.."scripts/"..filename)
+			print("Could not connect to website ", repUrl.."loader/"..filename)
 			failedLoads = failedLoads + 1
 			os.sleep(5)
 		else
