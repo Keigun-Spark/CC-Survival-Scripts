@@ -21,7 +21,7 @@ local function mineSquence(steps, direction)
 	end
 end
 
-if type(tonumber(tArgs[1])) ~= "number" or type(tostring(tArgs[2])) ~= "up" or type(tostring(tArgs[2])) ~= "down" then
+if type(tonumber(tArgs[1])) ~= "number" and type(tostring(tArgs[2])) ~= "up" and type(tostring(tArgs[2])) ~= "down" then
 	term.clear()
 	term.setCursorPos(1,1)
 	error("Define step amount and direction! (Example: '10 up') [10 steps, upwards]")

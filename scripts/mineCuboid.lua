@@ -245,7 +245,7 @@ function mineSquence(width, height, depth, side)
 	end
 end
 
-if type(tonumber(tArgs[1])) ~= "number" or type(tonumber(tArgs[2])) ~= "number" or type(tonumber(tArgs[3])) ~= "number" or type(tostring(tArgs[4])) ~= "right" or type(tostring(tArgs[4])) ~= "left" then
+if type(tonumber(tArgs[1])) ~= "number" and type(tonumber(tArgs[2])) ~= "number" and type(tonumber(tArgs[3])) ~= "number" and type(tostring(tArgs[4])) ~= "right" and type(tostring(tArgs[4])) ~= "left" then
 	term.clear()
 	term.setCursorPos(1,1)
 	error("Width, height, depth and side are required! (Example: '5 5 10 right') [5 blocks wide, 5 block heigh, 10 blocks deep and to the right of turtle]")
